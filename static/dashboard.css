@@ -1,0 +1,231 @@
+body {
+    margin: 0;
+    font-family: 'Times New Roman' , Times, serif;
+    font-size: 1rem;
+    color: #212529;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+main {
+    display: flex;
+    flex-wrap: nowrap;
+    height: -webkit-fill-availeble;
+    max-height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0px;
+    width: 250px;
+    height: 100%;
+    background: #74bdcb;
+    transition: all 0.5s ease;
+}
+
+.sidebar .top {
+    font-size: 22px;
+    color: #fff;
+    text-align: center;
+    line-height: 70px;
+    background-image: linear-gradient(to right, #fec8a7, #b2d2a4);
+}
+
+.sidebar ul a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: #fff;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(6, 255, 251, 0.1);
+    border-bottom: 1px solid rgba(125, 134, 146, 0.302);
+    transition: all 0.5s ease;
+}
+
+ul li:hover a {
+    padding-left: 100px;
+    background: #efe7bc;
+    color: rgb(0, 0, 0);
+}
+
+.sidebar ul a i {
+    margin-right: 16px;
+}
+
+
+#check {
+    display: none;
+}
+
+label #btn {
+    position: absolute;
+    cursor: pointer;
+    background: #ffffff;
+    border-radius: 3px;
+}
+
+label #open {
+    position: absolute;
+    cursor: pointer;
+    background: #924227;
+    border-radius: 1px;
+    font-size: 30px;
+}
+
+label #open {
+    left: 0;
+    top: 10;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    padding: 6px 12px;
+    transition: all 0.5s ease;
+}
+
+label #btn {
+    z-index: 1111;
+    left: 195px;
+    top: 25px;
+    font-size: 20px;
+    color: #000000;
+    padding: 4px 9px;
+    transition: all 0.5s ease;
+}
+
+#check:checked~.sidebar {
+    left:-250px;
+}
+
+#check:checked~label #open {
+    left:30px;
+    font-size: 20px;
+}
+
+#check:checked~label #btn {
+    left:-195px;
+}
+
+section {
+    background: #ffffff;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+section h1 {
+    text-align: center;
+    padding-top: 70px;
+    margin-left: 300px;
+    font-size: 60px;
+    color: #004369;
+}
+
+.row {
+    margin-left: 300px;
+}
+
+.control-panel {
+    background-image: linear-gradient(to right, #fec8a7, #b2d2a4);
+}
+
+.monitoring-panel {
+    background-image: linear-gradient(to right, #b2d2a4, #fec8a7);
+}
+
+.button {
+  border: 3px solid black;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+
+.btn-circle {
+    width: 100px; /* Adjust the width to control the button size */
+    height: 100px; /* Adjust the height to control the button size */
+    border-radius: 50%; /* Makes the button circular */
+}
+
+/* Custom CSS to arrange buttons in a circle */
+.circular-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 30px;
+}
+
+/* Custom CSS for Gauges and Display Panel */
+.gauges {
+    display: flex;
+    justify-content: space-between; /* Adjust spacing between gauges */
+}
+
+canvas {
+    width: 150px; /* Adjust the width of the gauges */
+    height: 150px; /* Adjust the height of the gauges */
+}
+
+/* Style for the gauge containers */
+.gauge-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    text-align: center;
+}
+
+/* Style for gauge numbers (like a clock) */
+.gauge-label {
+    font-size: 24px;
+}
+
+/* Style for gauge descriptions */
+.gauge-description {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Custom CSS to make the gauge thinner and rounder */
+canvas#tank-level-gauge,
+canvas#total-water-gauge,
+canvas#flow-rate-gauge {
+    width: 150px; /* Adjust the width as needed */
+    height: 150px; /* Adjust the height as needed */
+    border-radius: 50%; /* Makes the gauge round */
+    border: 1px solid #ccc; /* Adds a border to the gauge */
+}
+
+/* Style for the inner text of the gauge */
+canvas#tank-level-gauge + div.gauge-label,
+canvas#total-water-gauge + div.gauge-label,
+canvas#flow-rate-gauge + div.gauge-label {
+    font-size: 18px; /* Adjust the font size as needed */
+    margin-top: 30px; /* Adjust the margin to center the text */
+}
+
+/* Style for the gauge descriptions */
+canvas#tank-level-gauge + div.gauge-description,
+canvas#total-water-gauge + div.gauge-description,
+canvas#flow-rate-gauge + div.gauge-description {
+    font-size: 14px; /* Adjust the font size as needed */
+}
+
+
+
+

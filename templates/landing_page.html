@@ -1,0 +1,44 @@
+<!-- landing.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to My Web App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link your custom CSS file here -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='landing_page.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <main>
+        <input type="checkbox" id="check">
+        <label for="check">
+            <i class="fas fa-bars" id="btn"></i>
+            <i class="fa fa-arrow-right" id="open"></i>
+        </label>
+        <div class="sidebar">
+            <div class="top">
+                LOGO!
+            </div>
+            <ul>
+                <li><a class="#" href="{{ url_for('dashboard') }}"><i class="fa fa-home"></i> LOGIN</a></li>
+                <li><a class="#" href="#"><i class="fa fa-shopping-basket"></i> Orders</a></li>
+                <li><a class="#" href="#"><i class="fa fa-shopping-bag"></i> Products</a></li>
+                <li><a class="#" href="#"><i class="fa fa-user-circle"></i> Profile</a></li>
+            </ul>
+        </div>
+        <section>
+            <!-- Landing Page Content -->
+            <h1>IoT Watel Level Monitoring</h1>
+            <p>This is the landing page of my web application.</p>
+        </section>
+    </main>
+
+
+
+    <!-- Bootstrap and JavaScript dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

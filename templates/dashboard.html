@@ -1,0 +1,87 @@
+<!-- landing.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DASHBOARD</title>
+    <script src="https://cdn.rawgit.com/bernii/gauge.js/master/dist/gauge.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link your custom CSS file here -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+     <script src="{{ url_for('static', filename='gauge.js') }}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <main>
+        <input type="checkbox" id="check">
+        <label for="check">
+            <i class="fas fa-bars" id="btn"></i>
+            <i class="fa fa-arrow-right" id="open"></i>
+        </label>
+        <div class="sidebar">
+            <div class="top">
+               WLMS
+            </div>
+            <ul>
+                <li><a class="#" href="#"><i class="fa fa-user-circle"></i> PROFILE</a></li>
+                <li><a class="#" href="{{ url_for('dashboard') }}"><i class="fa fa-bell"></i> ALARMS</a></li>
+                <li><a class="#" href="#"><i class="fa fa-book"></i> RECORDS</a></li>
+                <li><a class="#" href="#"><i class="fa fa-user-circle"></i> LOGOUT</a></li>
+            </ul>
+        </div>
+        <section>
+            <!-- Landing Page Content -->
+            <h1 >IoT Water Level Monitoring</h1>
+            <!-- Two Columns: Control Panel and Monitoring Panel -->
+                    <div class="container">
+                        <div class="row control-panel">
+                            <div class="col-lg-12 col-sm-6">
+                                <h2>Control Panel</h2>
+                                <div class="circular-buttons">
+                                    <button class="btn btn-success btn-circle" id="start-system">System Start</button>
+                                    <button class="btn btn-danger btn-circle" id="turn-on-pump">System Stop</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                        <!-- Monitoring Panel Column -->
+                        <div class="container">
+                            <div class="row monitoring-panel">
+                                <div class="col-lg-12 col-sm-6">
+                                    <h2>Display Panel</h2>
+                                    <div class="gauges">
+                                                    <div class="gauge-container">
+                <canvas id="tank-level-gauge"></canvas>
+                <div id="tank-level-label" class="gauge-label">50%</div>
+                <div id="tank-level-description" class="gauge-description">Tank Level</div>
+            </div>
+
+            <div class="gauge-container">
+                <canvas id="total-water-gauge"></canvas>
+                <div id="total-water-label" class="gauge-label">500 L</div>
+                <div id="total-water-description" class="gauge-description">Water Used (L)</div>
+            </div>
+
+            <div class="gauge-container">
+                <canvas id="flow-rate-gauge"></canvas>
+                <div id="flow-rate-label" class="gauge-label">10 L/min</div>
+                <div id="flow-rate-description" class="gauge-description">Flow Rate (L/min)</div>
+            </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+        </section>
+    </main>
+
+
+
+    <!-- Bootstrap and JavaScript dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
